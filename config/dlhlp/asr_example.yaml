@@ -17,7 +17,7 @@ data:
     delta_window_size: 2
   text:
     mode: 'character'                       # 'character'/'word'/'subword'
-    vocab_file: 'data/Dlhlp/vocab.txt'
+    vocab_file: './data/Dlhlp/vocab.txt'
 
 hparas:                                   # Experiment hyper-parameters
   valid_step: 500
@@ -39,10 +39,10 @@ model:                                    # Model architecture
     module: 'LSTM'                        # 'LSTM'/'GRU'/'Transformer'
     bidirection: True
     dim: [512,512]
-    dropout: [0,0,0,0,0]
-    layer_norm: [False,False,False,False,False]
-    proj: [True,True,True,True,True]      # Linear projection + Tanh after each rnn layer
-    sample_rate: [1,1,1,1,1]
+    dropout: [0,0]
+    layer_norm: [False,False]
+    proj: [True,True]      # Linear projection + Tanh after each rnn layer
+    sample_rate: [1,1]
     sample_style: 'drop'                  # 'drop'/'concat'
   attention:
     mode: 'loc'                           # 'dot'/'loc'
